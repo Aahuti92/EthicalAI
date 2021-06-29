@@ -1,0 +1,9 @@
+.NavAppBar {
+    top: 0px;
+    left: 0px;
+    width: 1440px;
+    height: 99px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 8px #00000048;
+    opacity: 1;
+}
