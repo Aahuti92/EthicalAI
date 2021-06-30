@@ -7,12 +7,9 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <div class="d">
-        <NavbarComponent />
-        <Route path="/" exact component={AppBody} />
-      </div>
+      <NavbarComponent />
+      <Route path="/" exact component={AppBody} />
     </Router>
   );
 }
-
 export default App;

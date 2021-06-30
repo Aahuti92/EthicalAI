@@ -16,7 +16,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import { SearchOutlined } from '@material-ui/icons';
+import { BorderLeft, SearchOutlined } from '@material-ui/icons';
 import { Button } from '@material-ui/core';
 import Image from "material-ui-image";
 
@@ -32,7 +32,8 @@ const useStyles = makeStyles((theme) => ({
     height: "99px",
     background: "#FFFFFF 0% 0% no-repeat padding-box",
     opacity: "1",
-    overflowX: "hidden"
+    // overflowX: "hidden",
+    marginBottom: "3px",
   },
   // menuButton: {
   //   marginRight: theme.spacing(2),
@@ -40,8 +41,9 @@ const useStyles = makeStyles((theme) => ({
   // title: {
   //   display: 'none',
   //   [theme.breakpoints.up('sm')]: {
-  //     display: 'block',
+  //     display: 'flex',
   //   },
+  //   justifyContent: "space-between"
   // },
   // search: {
   //   position: 'relative',
@@ -95,14 +97,15 @@ const useStyles = makeStyles((theme) => ({
   navItems: {
     textDecoration: "none",
     // padding: "24px 45px 24px 36px",
-    position: "absolute",
-    left: "537px",
+    position: "relative",
+    padding:"0 20px",
+    left: "35vw",
     width: "53px",
     height: "18px",
     font: "normal normal normal 16px/18px Ubuntu",
     color: "#555555",
     opacity: "1",
-
+    marginTop:"2%"
   },
   navButton: {
     position: "absolute",
@@ -113,10 +116,12 @@ const useStyles = makeStyles((theme) => ({
     minWidth: "0",
     backgroundImage: "URL('../../images/searchIcon.svg')",
     backgroundRepeat: "no-repeat",
-  }
-
-
-
+  },
+  cglogo: {
+    position: "absolute",
+    left: "10%",
+    top: "20px",
+  },
 }));
 
 NavbarComponent.propTypes = {};
@@ -209,15 +214,19 @@ export default function NavbarComponent() {
     <div className={classes.grow}>
       <AppBar position="static" className={classes.NavAppBar}>
         <Toolbar>
-          <img alt="Capgemini" src={process.env.PUBLIC_URL + "/images/cglogo.png"} />
-          {/* <img alt="Capgemini" src={process.env.PUBLIC_URL + "/CGlogo.png"} /> */}
+          <div className={classes.cglogo}>
+            <img alt="Capgemini" src={process.env.PUBLIC_URL + "/images/cglogo.png"} />
+            <img src={process.env.PUBLIC_URL + "/images/line.svg"} style={{ padding: "0 1.5em" }} />
+            <img alt="Fairy" src={process.env.PUBLIC_URL + "/images/fairys.png"} />
+          </div>
 
-          <Typography className={classes.title} variant="h6" noWrap>
-            <a href="#" className={classes.navItems}>LOREM</a>
-            <a href="#" className={classes.navItems} style={{ left: "638px" }}>LOREM</a>
-            <a href="#" className={classes.navItems} style={{ left: "739px" }}>LOREM</a>
-            <a href="#" className={classes.navItems} style={{ left: "840px" }}>LOREM</a>
-          </Typography>
+
+          
+          <a href="#" className={classes.navItems}>LOREM</a>
+          <a href="#" className={classes.navItems} >LOREM</a>
+          <a href="#" className={classes.navItems} >LOREM</a>
+          <a href="#" className={classes.navItems} >LOREM</a>
+          
           {/* <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
