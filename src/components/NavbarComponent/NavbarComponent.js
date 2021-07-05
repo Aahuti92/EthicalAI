@@ -108,14 +108,14 @@ const useStyles = makeStyles((theme) => ({
     marginTop:"2%"
   },
   navButton: {
-    position: "absolute",
+    margin: "0 10px",
     top: "19px",
     left: "1066px",
     width: "40px",
     height: "40px",
     minWidth: "0",
-    backgroundImage: "URL('../../images/searchIcon.svg')",
     backgroundRepeat: "no-repeat",
+    padding:"0"
   },
   cglogo: {
     position: "absolute",
@@ -240,9 +240,13 @@ export default function NavbarComponent() {
               inputProps={{ 'aria-label': 'search' }}
             /> 
           </div> */}
+          <div style={{left:"-25%",position:"relative"}}>
+            <Button variant="outlined" className={classes.navButton}><img src={process.env.PUBLIC_URL + "/images/searchIcon.svg"} ></img></Button>
+            <Button variant="outlined" className={classes.navButton} ><img src={process.env.PUBLIC_URL + "/images/notification.svg"} ></img></Button>
+            
 
-          <Button variant="outlined" className={classes.navButton}></Button>
-          <Button variant="outlined" className={classes.navButton} style={{ left: "1126px" }}></Button>
+
+          </div>
           {/* <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 4 new mails" color="inherit">
